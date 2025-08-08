@@ -6,18 +6,16 @@ const { RELOADLY_CLIENT_ID, RELOADLY_CLIENT_SECRET,ENVIRONNEMENT } = process.env
 
 export async function POST(req:Request){
 
-  console.log("envsvar",RELOADLY_CLIENT_ID,RELOADLY_CLIENT_SECRET)
-
     const {countryIsoName,phonenumber} = await req.json();
     const access_token = await getToken();
+
+    console.log("token", access_token)
 
     let url =` https://topups-sandbox.reloadly.com/operators/auto-detect/phone/${phonenumber}/countries/${countryIsoName}`
 
     if(ENVIRONNEMENT=="PROD"){
         url =  ` https://topups.reloadly.com/operators/auto-detect/phone/${phonenumber}/countries/${countryIsoName}`
     }
-
-    console.log("url",url)
 
     
      try {
