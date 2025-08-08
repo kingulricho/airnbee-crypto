@@ -7,7 +7,9 @@ const Page = () => {
   return (
     <div className="flex flex-col gap-4">
       <TopupSummary />
-      <Paypal />
+      <div className="max-w-md mx-auto">
+        <Paypal />
+      </div>
     </div>
   );
 };

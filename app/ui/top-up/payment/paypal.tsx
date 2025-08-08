@@ -16,7 +16,7 @@ const Paypal = () => {
           options={{
             currency: "EUR",
             clientId:
-              "AYBCKELcmyuvCRlQb0ybBRYueISIsKuQaqR9jv-saFV-92iZtDcraNfPhrkuFwGbDDdk-o9T5HuS5qYM",
+              "AUn_RNeNyjQTCjeUqQqbrwr0qNeTdzCTuI3dv1DQaOhxtXP1hCF2DbWuZ8RkvNazGl-vq9-GTjfhePjZ",
           }}
         >
           <PayPalButtons
