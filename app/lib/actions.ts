@@ -1,7 +1,13 @@
 const { RELOADLY_CLIENT_ID, RELOADLY_CLIENT_SECRET, ENVIRONNEMENT } = process.env;
 //import fetch from "node-fetch"
 
+let audience = "https://topups-sandbox.reloadly.com";
+
 export async function getToken(){
+
+  if(ENVIRONNEMENT == "PROD"){
+    audience = "https://topups.reloadly.com";
+  }
     try {
         if (!RELOADLY_CLIENT_ID || !RELOADLY_CLIENT_SECRET) {
             throw new Error("MISSING_API_CREDENTIALS");
@@ -18,7 +24,7 @@ export async function getToken(){
               client_id: RELOADLY_CLIENT_ID,
               client_secret:RELOADLY_CLIENT_SECRET,
               grant_type: "client_credentials",
-              audience: "https://topups-sandbox.reloadly.com",
+              audience: audience,
             }),
           });
     
