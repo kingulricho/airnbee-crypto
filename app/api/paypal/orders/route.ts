@@ -20,7 +20,7 @@ export async function POST(request: Request){
                     amount: {
                         currency_code: "EUR",
                         value: price / 10,
-                        breakdown: {
+                      /*   breakdown: {
                             item_total: {
                                 currency_code: "EUR",
                                 value: "100",
@@ -29,7 +29,7 @@ export async function POST(request: Request){
                                 currency_code: "EUR",
                                 value: "10.00"
                               }
-                        },
+                        }, */
                     },
                     // lookup item details in `cart` from database
                     items: [

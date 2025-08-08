@@ -9,8 +9,6 @@ export async function POST(req:Request){
     const {countryIsoName,phonenumber} = await req.json();
     const access_token = await getToken();
 
-    console.log("token", access_token)
-
     let url =` https://topups-sandbox.reloadly.com/operators/auto-detect/phone/${phonenumber}/countries/${countryIsoName}`
 
     if(ENVIRONNEMENT=="PROD"){
