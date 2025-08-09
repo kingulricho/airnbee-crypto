@@ -20,16 +20,16 @@ export async function POST(request: Request){
                     amount: {
                         currency_code: "EUR",
                         value: price / 10,
-                      /*   breakdown: {
+                         breakdown: {
                             item_total: {
                                 currency_code: "EUR",
-                                value: "100",
+                                value: price / 10,
                             },
                             shipping: {
                                 currency_code: "EUR",
-                                value: "10.00"
+                                value: 0
                               }
-                        }, */
+                        }, 
                     },
                     // lookup item details in `cart` from database
                     items: [
@@ -37,9 +37,9 @@ export async function POST(request: Request){
                             name: "T-Shirt",
                             unit_amount: {
                                 currency_code: "EUR",
-                                value: "100",
+                                value: price /10,
                             },
-                            quantity: "1",
+                            quantity: 1,
                             description: "Super Fresh Shirt",
                             sku: "sku01",
                         },
