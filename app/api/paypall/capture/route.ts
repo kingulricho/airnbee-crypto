@@ -32,9 +32,8 @@ const ordersController = new OrdersController(client);
 
 
 
-export async function POST({params}:{params:{orderId:string}}){
-    const {orderId} = params;
-    console.log("orderID",orderId)
+export async function POST(request:Request){
+    const {orderId} = await request.json();
 
         const collect = {
         id: orderId,
@@ -52,6 +51,8 @@ export async function POST({params}:{params:{orderId:string}}){
             
                 // const { statusCode, headers } = error;
                 console.log(error)
+
+                return NextResponse.json({"message":"error api"})
             
         }
 
