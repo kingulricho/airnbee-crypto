@@ -72,15 +72,15 @@ const Paypal = () => {
             console.log("orderdata", data);
 
             try {
-              const response = await fetch(
-                `/api/paypall/${data.orderID}/capture`,
-                {
-                  method: "POST",
-                  headers: {
-                    "Content-Type": "application/json",
-                  },
-                }
-              );
+              const response = await fetch(`/api/paypall/capture`, {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                  orderId: data.orderID,
+                }),
+              });
 
               const orderData = await response.json();
               // Three cases to handle:
