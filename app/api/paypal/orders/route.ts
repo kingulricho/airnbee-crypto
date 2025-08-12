@@ -17,10 +17,11 @@ export async function POST(request: Request){
     intent: "CAPTURE",
     purchase_units: [
                 {
+
                     amount: {
                         currency_code: "EUR",
                         value: price / 10,
-                         breakdown: {
+/*                          breakdown: {
                             item_total: {
                                 currency_code: "EUR",
                                 value: price / 10,
@@ -29,10 +30,10 @@ export async function POST(request: Request){
                                 currency_code: "EUR",
                                 value: 0
                               }
-                        }, 
+                        },  */
                     },
                     // lookup item details in `cart` from database
-                    items: [
+/*                     items: [
                         {
                             name: "T-Shirt",
                             unit_amount: {
@@ -43,10 +44,9 @@ export async function POST(request: Request){
                             description: "Super Fresh Shirt",
                             sku: "sku01",
                         },
-                    ],
+                    ], */
                 },
     ],
-    prefer: "return=minimal"
   };
 
 try{
