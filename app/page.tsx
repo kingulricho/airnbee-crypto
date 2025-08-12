@@ -10,7 +10,11 @@ export default async function Page() {
   if (!countries) return <div>no countries</div>;
   return (
     <div className="flex flex-col">
-      <Paypal />
+      <div className="flex flex-row gap-4">
+        <div>paypal test</div>
+        <Paypal />
+      </div>
+
       <div className="mx-auto max-w-md">
         <div className="text-wrap w-full mt-4 mb-4 font-semibold !leading-tight text-gray-900 text-xl md:text-2xl lg:text-xl">
           Send Airtime to your Loved ones
