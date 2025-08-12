@@ -3,12 +3,14 @@ import Image from "next/image";
 import { Country } from "./lib/definitions";
 import HomeCard from "./ui/home/home-card";
 import { getCountries } from "./lib/actions";
+import Paypal from "./ui/top-up/payment/paypall";
 
 export default async function Page() {
   const countries: Country[] = await getCountries();
   if (!countries) return <div>no countries</div>;
   return (
     <div className="flex flex-col">
+      <Paypal />
       <div className="mx-auto max-w-md">
         <div className="text-wrap w-full mt-4 mb-4 font-semibold !leading-tight text-gray-900 text-xl md:text-2xl lg:text-xl">
           Send Airtime to your Loved ones
